@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Material | FOR PCM</title>
+  <meta name="description" content="Study-material hub for CBSE Class 12 PCM: must-master checklists, frequent topics, your own formula sheet and notes, NCERT links and one-day-left lists.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
 
+  <main id="main" class="container">
+    <section class="no-print" aria-labelledby="page-title">
+      <h1 id="page-title">Study Material</h1>
+    </section>
+
+    <!-- Everything below is rendered by js/material.js from data/material.js (and data/plan.js if present) -->
+    <section id="banner" class="lect-banner no-print" aria-label="Read first: what this page is"></section>
+
+    <section class="card no-print" aria-labelledby="m-progress-title">
+      <h2 id="m-progress-title">My progress</h2>
+      <div id="m-progress-rows"></div>
+      <p class="small" id="m-progress-note"></p>
+    </section>
+
+    <div class="toolbar m-toolbar no-print">
+      <div class="field m-search">
+        <label for="m-search">Search chapters and items</label>
+        <input id="m-search" type="search" autocomplete="off">
+      </div>
+      <button class="btn btn-outline" id="m-reset" type="button">Reset my data</button>
+    </div>
+    <p class="small no-print" id="m-status" role="status"></p>
+
+    <section aria-label="Study material sections">
+      <div class="tablist no-print" id="tablist" role="tablist" aria-label="Study material sections"></div>
+      <div id="panels"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="data/plan.js"></script>
+  <script src="data/material.js"></script>
+  <script src="js/material.js"></script>
+</body>
+</html>

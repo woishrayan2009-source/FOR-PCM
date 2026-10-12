@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter Plan | FOR PCM</title>
+  <meta name="description" content="33-day chapter plan for CBSE Class 12 PCM: day by day, by chapter, hours and priority, focus guides.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
 
+  <main id="main" class="container">
+    <section class="no-print" aria-labelledby="page-title">
+      <h1 id="page-title">Chapter Plan</h1>
+      <p>27 days of revision plus 6 full-paper days. All three subjects appear every day; Maths gets the largest share.</p>
+    </section>
+
+    <!-- Phase bar and chips are rendered by js/plan.js from PHASES -->
+    <section class="no-print" aria-labelledby="phase-title">
+      <h2 id="phase-title" class="sr-only">Phases</h2>
+      <ol class="phase-bar" id="phase-bar"></ol>
+      <p id="phase-chips"></p>
+    </section>
+
+    <div class="toolbar no-print">
+      <button class="btn btn-outline" id="print" type="button">Print</button>
+      <button class="btn btn-outline" id="reset" type="button">Reset progress</button>
+    </div>
+
+    <section aria-label="Plan views">
+      <div class="tablist no-print" id="view-tabs" role="tablist" aria-label="Plan views">
+        <button role="tab" type="button" id="vtab-days" aria-controls="view-days" aria-selected="true">Day by day</button>
+        <button role="tab" type="button" id="vtab-chapters" aria-controls="view-chapters" aria-selected="false" tabindex="-1">By chapter</button>
+        <button role="tab" type="button" id="vtab-hours" aria-controls="view-hours" aria-selected="false" tabindex="-1">Hours &amp; priority</button>
+      </div>
+
+      <!-- View 1: Day by day -->
+      <div id="view-days" role="tabpanel" aria-labelledby="vtab-days" tabindex="0">
+        <h2 class="sr-only">Day by day</h2>
+        <div class="filters no-print">
+          <div class="field">
+            <label for="f-subject">Subject</label>
+            <select id="f-subject">
+              <option value="all">All</option>
+              <option value="physics">Physics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="maths">Maths</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-phase">Phase</label>
+            <select id="f-phase">
+              <option value="all">All</option>
+              <option value="1">Phase 1</option>
+              <option value="2">Phase 2</option>
+              <option value="3">Phase 3</option>
+              <option value="4">Papers</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-search">Search</label>
+            <input id="f-search" type="search" autocomplete="off">
+          </div>
+        </div>
+        <p class="small no-print" id="day-count" role="status"></p>
+        <div class="table-wrap" id="day-wrap" tabindex="0" role="region" aria-label="Day by day plan table"></div>
+        <p class="note no-print" id="day-empty" hidden>No days match these filters.</p>
+        <p class="note no-print" id="paper-note"></p>
+      </div>
+
+      <!-- View 2: By chapter -->
+      <div id="view-chapters" class="no-print" role="tabpanel" aria-labelledby="vtab-chapters" tabindex="0" hidden>
+        <div class="card">
+          <h2>Progress</h2>
+          <div id="progress"></div>
+        </div>
+        <div id="chapter-list" class="acc-list"></div>
+      </div>
+
+      <!-- View 3: Hours and priority -->
+      <div id="view-hours" class="no-print" role="tabpanel" aria-labelledby="vtab-hours" tabindex="0" hidden>
+        <h2>Hours &amp; priority</h2>
+        <p class="note" id="hours-summary"></p>
+        <div class="filters">
+          <div class="field">
+            <label for="h-subject">Subject</label>
+            <select id="h-subject">
+              <option value="all">All</option>
+              <option value="physics">Physics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="maths">Maths</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrap" id="hours-wrap" tabindex="0" role="region" aria-label="Hours and priority table"></div>
+      </div>
+    </section>
+
+    <section class="no-print" aria-labelledby="guides-title">
+      <h2 id="guides-title">Focus guides</h2>
+      <div id="guides" class="acc-list"></div>
+    </section>
+
+    <section class="no-print" aria-labelledby="notes-title">
+      <div class="card">
+        <h2 id="notes-title">Honest notes</h2>
+        <ul id="notes-list"></ul>
+        <p class="small" id="notes-source"></p>
+      </div>
+    </section>
+
+    <section class="no-print" aria-labelledby="practical-title">
+      <div class="card">
+        <h2 id="practical-title">Practical preparation</h2>
+        <p>Practicals (30 marks each in Physics and Chemistry) are not in this plan yet. Add them once your school gives dates.</p>
+      </div>
+    </section>
+
+    <p class="no-print">Need a daily time-table? <a href="routines.html">See Routines</a></p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="data/plan.js"></script>
+  <script src="js/plan.js"></script>
+</body>
+</html>

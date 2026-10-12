@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lectures | FOR PCM</title>
+  <meta name="description" content="Subject-wise and chapter-wise YouTube revision lectures for CBSE Class 12 PCM, with verification badges and confidence levels.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
 
+  <main id="main" class="container">
+    <section aria-labelledby="page-title">
+      <h1 id="page-title">Lectures</h1>
+      <p>Free YouTube revision lectures, subject by subject and chapter by chapter.</p>
+    </section>
+
+    <!-- Always-visible verification notice, rendered from BANNER in data/lectures.js -->
+    <section id="banner" class="lect-banner" aria-label="Read first: verification notice"></section>
+
+    <!-- Shown only when today is inside the plan (needs data/plan.js) -->
+    <section id="today" class="card" aria-labelledby="today-title" hidden>
+      <h2 id="today-title"></h2>
+      <ul class="today-list" id="today-list"></ul>
+    </section>
+
+    <section id="lect-tabs" aria-label="Lectures by subject">
+      <div class="tablist" id="tablist" role="tablist" aria-label="Lecture sections"></div>
+
+      <div class="filters lect-filters" id="lect-filters">
+        <div class="field">
+          <label for="f-conf">Confidence</label>
+          <select id="f-conf">
+            <option value="all">All</option>
+            <option value="medium-up">Medium and above</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-search">Search</label>
+          <input id="f-search" type="search" autocomplete="off">
+        </div>
+        <label class="check"><input type="checkbox" id="f-unwatched"><span>Show only chapters not watched</span></label>
+      </div>
+      <p class="small" id="f-status" role="status"></p>
+
+      <!-- Panels are rendered by js/lectures.js from data/lectures.js -->
+      <div id="panels"></div>
+    </section>
+
+    <p class="note" id="lect-footnote"></p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="data/plan.js"></script>
+  <script src="data/lectures.js"></script>
+  <script src="js/lectures.js"></script>
+</body>
+</html>

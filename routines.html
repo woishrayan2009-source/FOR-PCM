@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Routines | FOR PCM</title>
+  <meta name="description" content="Four daily routines for the 33-day CBSE Class 12 PCM revision: timetables, comparison, quiz and wake-up streak tracker.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
 
+  <main id="main" class="container">
+    <section class="no-print" aria-labelledby="page-title">
+      <h1 id="page-title">Routines</h1>
+      <p>Pick a routine that matches your body clock. All routines keep 6 hours of sleep, about 12 hours of study in 90-minute blocks, meals, exercise and a short walk.</p>
+    </section>
+
+    <!-- Tabs and timetables are rendered by js/routines.js from data/routines.js -->
+    <section id="routine-tabs" aria-label="Routine timetables">
+      <div class="tablist no-print" id="tablist" role="tablist" aria-label="Choose a routine"></div>
+      <div id="panels"></div>
+    </section>
+
+    <section class="no-print" aria-labelledby="compare-title">
+      <h2 id="compare-title">Compare routines</h2>
+      <div class="table-wrap" id="compare-wrap" tabindex="0" role="region" aria-label="Routine comparison table, scrolls sideways on small screens"></div>
+      <p class="note">On full-paper days (Days 28-33) use 4 blocks for two 3-hour papers and 4 blocks for review. On a rough day, drop the Mixed block first and never cut sleep.</p>
+    </section>
+
+    <section class="no-print" aria-labelledby="quiz-title">
+      <h2 id="quiz-title">Which routine suits me?</h2>
+      <div class="card" id="quiz"></div>
+    </section>
+
+    <section class="no-print" aria-labelledby="tips-title">
+      <h2 id="tips-title">Waking up early</h2>
+      <details class="card">
+        <summary>How to wake up early (Alarmy method)</summary>
+        <ol id="tips-list"></ol>
+      </details>
+    </section>
+
+    <section class="no-print" aria-labelledby="streak-title">
+      <h2 id="streak-title">Wake-up streak</h2>
+      <div class="card">
+        <p>Tap a day when you woke on time.</p>
+        <div class="streak" id="streak-grid"></div>
+        <p class="stats" id="streak-stats" role="status"></p>
+        <button class="btn btn-outline" id="streak-reset" type="button">Reset</button>
+      </div>
+      <p class="note">If you slip 3 days in a row, move to the next later routine. Don't quit.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="data/routines.js"></script>
+  <script src="js/routines.js"></script>
+</body>
+</html>

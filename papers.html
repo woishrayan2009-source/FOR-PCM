@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papers | FOR PCM</title>
+  <meta name="description" content="Paper bank and tracker for CBSE Class 12 PCM: official links, which paper to solve on which day, a 3-hour timer, score tracker and error log.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
 
+  <main id="main" class="container">
+    <section class="no-print" aria-labelledby="page-title">
+      <h1 id="page-title">Papers</h1>
+      <p>Official links, which paper to solve on which day, a 3-hour timer, a score tracker and an error log. FOR PCM does not host any paper or solution.</p>
+    </section>
+
+    <!-- Progress, banner, tabs and panels are rendered by js/papers.js from data/papers.js -->
+    <section class="card no-print" id="progress" aria-labelledby="progress-title">
+      <h2 id="progress-title" class="sr-only">Progress</h2>
+      <p class="p-total" id="p-total"></p>
+      <ul class="p-subs" id="p-subs"></ul>
+      <p class="small" id="p-note"></p>
+    </section>
+
+    <section id="banner" class="lect-banner no-print" aria-label="Read first: what is verified"></section>
+
+    <div class="toolbar no-print">
+      <button class="btn btn-outline" id="print" type="button">Print</button>
+      <button class="btn btn-outline" id="reset-all" type="button">Reset all paper data</button>
+    </div>
+
+    <section aria-label="Papers by subject">
+      <div class="tablist no-print" id="tablist" role="tablist" aria-label="Paper sections"></div>
+      <div id="panels"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="data/papers.js"></script>
+  <script src="js/papers.js"></script>
+</body>
+</html>
