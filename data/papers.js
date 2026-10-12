@@ -15,10 +15,17 @@ const LINKS = {
     note: "Opened and verified in research." },
   chem2627: { title: "Chemistry 2026-27 SQP (PDF)", url: "https://cbseacademic.nic.in/web_material/SQP/ClassXII_2026_27/Chemistry-SQP.pdf",
     note: "Opened and verified in research." },
-  math2627: { title: "Maths 2026-27 SQP", url: SQP_PAGE, unverified: true,
-    note: "Maths PDF link not verified. Open the official Class XII page and pick Mathematics." },
-  sqp2526: { title: "2025-26 SQP and MS", url: "https://cbseacademic.nic.in/sqp_classxii_2025-26.html", note: "Official page." },
-  sqp2425: { title: "2024-25 SQP and MS", url: "https://cbseacademic.nic.in/SQP_CLASSXii_2024-25.html", note: "Official page (as given in research)." },
+  math2627: { title: "Maths 2026-27 SQP (PDF)", url: "https://cbseacademic.nic.in/web_material/SQP/ClassXII_2026_27/Maths-SQP.pdf",
+    note: "Opened and verified in research: 80 marks, 3 hours, 38 questions." },
+  physMS2627: { title: "Physics 2026-27 marking scheme (PDF)", url: "https://cbseacademic.nic.in/web_material/SQP/ClassXII_2026_27/Physics-MS.pdf",
+    note: "Opened and verified in research." },
+  chemMS2627: { title: "Chemistry 2026-27 marking scheme (PDF)", url: "https://cbseacademic.nic.in/web_material/SQP/ClassXII_2026_27/Chemistry-MS.pdf",
+    note: "Found in search results; not opened in the last verification pass." },
+  mathMS2627: { title: "Maths 2026-27 marking scheme (PDF)", url: "https://cbseacademic.nic.in/web_material/SQP/ClassXII_2026_27/Maths-MS.pdf",
+    note: "Found in search results; not opened in the last verification pass." },
+  sqp2324: { title: "2023-24 SQP and MS", url: "https://cbseacademic.nic.in/SQP_CLASSXII_2023-24.html", note: "Official page." },
+  sqp2526: { title: "2025-26 SQP and MS", url: "https://cbseacademic.nic.in/SQP_CLASSXII_2025-26.html", note: "Official page." },
+  sqp2425: { title: "2024-25 SQP and MS", url: "https://cbseacademic.nic.in/SQP_CLASSXII_2024-25.html", note: "Official page." },
   sqparch: { title: "SQP archive (earlier sessions)", url: "https://cbseacademic.nic.in/sqp_archive.html",
     note: "SQPs and marking schemes from earlier sessions through 2025-26." },
   board: { title: "Board question papers", url: "https://www.cbse.gov.in/cbsenew/question-paper.html",
@@ -47,13 +54,13 @@ const BANK = [
   row(6, G2, "2021-22 Term I", "Board paper (MCQ-heavy term format)", USE_TERM, "board", "ms"),
   row(7, G2, "2021-22 Term II (the 2022 board paper)", "Board paper (term format)", USE_TERM, "board", "ms"),
   row(8, G2, "2023 board", "Board paper", USE_MIXED, "board", "ms"),
-  row(9, G2, "2023-24 SQP", "Official sample paper", USE_MIXED, "sqparch", "sqparch"),
+  row(9, G2, "2023-24 SQP", "Official sample paper", USE_MIXED, "sqp2324", "sqp2324"),
   row(10, G2, "Your pick (suggested: 2022-23 SQP from the archive)", "Official sample paper", "Suggestion only; not part of the research.", "sqparch", "sqparch", "Not in research"),
   row(11, G3, "2024 board", "Board paper", USE_FULL, "board", "ms"),
   row(12, G3, "2024-25 SQP", "Official sample paper", USE_FULL, "sqp2425", "sqp2425"),
   row(13, G3, "2025 board", "Board paper", USE_FULL, "board", "ms"),
   row(14, G3, "2025-26 SQP", "Official sample paper", USE_FULL, "sqp2526", "sqp2526"),
-  row(15, G3, "2026-27 SQP", "Official sample paper", USE_FULL, { physics: "phys2627", chemistry: "chem2627", maths: "math2627" }, "sqp2627")
+  row(15, G3, "2026-27 SQP", "Official sample paper", USE_FULL, { physics: "phys2627", chemistry: "chem2627", maths: "math2627" }, { physics: "physMS2627", chemistry: "chemMS2627", maths: "mathMS2627" })
 ];
 
 /* ---- Which paper on which plan day ---- */
@@ -67,8 +74,8 @@ const PHASE_PAPERS = {
 const BUFFER = [{ day: 34, bank: 14 }, { day: 35, bank: 12 }];
 
 const BANNER = {
-  verified: "the 2026-27 sample papers and marking schemes were released on 21 Sep 2026 on the official CBSE Academic page.",
-  notVerified: "individual older-year PDFs.",
+  verified: "the 2026-27 Physics, Chemistry and Maths sample papers (opened) and the Physics marking scheme (opened) on the official CBSE Academic page. The Chemistry and Maths marking-scheme PDFs were found in search but not opened.",
+  notVerified: "every set/series and matching marking scheme for older years, and Hindi/bilingual solutions for every paper.",
   advice: "Download older papers from the official CBSE pages below, not from third-party links.",
   pattern: "Pattern unchanged for 2026-27 (per CBSE notification)."
 };
@@ -93,7 +100,7 @@ const METHOD = {
   pattern: { title: "Pattern notes", items: [
     { subject: "Maths", text: "38 questions, Section A 18 MCQ + 2 assertion-reason (1 mark), B 5 x 2, C 6 x 3, D 4 x 5, E 3 case studies x 4, no overall choice." },
     { subject: "Physics", text: "33 questions, A 12 MCQ + 4 assertion-reason (1 mark), B 5 x 2, C 7 x 3, D 2 case studies x 4, E 3 x 5, internal choice in B (2), C (1), E (all 3)." },
-    { subject: "Chemistry", text: "Same layout as Physics per the official 2025-26 marking scheme; the 2026-27 Chemistry sample paper was not directly checked." }
+    { subject: "Chemistry", text: "33 questions, 70 marks, 3 hours (2026-27 Chemistry SQP opened and verified). CBSE states no change in design or pattern for 2026-27." }
   ] },
   when: { title: "When to use which paper", items: [
     "Prefer papers from 2023 onward, especially official sample papers, for timing practice; use older papers for topic-wise questions.",

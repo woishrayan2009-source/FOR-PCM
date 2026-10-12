@@ -192,36 +192,48 @@ const NOT_REQUIRED = [
 
 /* Resources tab */
 const NCERT_LINKS = [
-  { title: "Physics Part I", url: "https://ncert.nic.in/textbook/pdf/leph1ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Physics Part II", url: "https://ncert.nic.in", note: "Not opened in research. Open the NCERT website, go to Textbooks, choose Class XII, then Physics. English and Hindi options are on the portal." },
-  { title: "Chemistry Part I", url: "https://ncert.nic.in/textbook/pdf/lech1ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Chemistry Part II", url: "https://ncert.nic.in/textbook/pdf/lech2ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Mathematics Part I", url: "https://ncert.nic.in/textbook/pdf/lemh1ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Mathematics Part II", url: "https://ncert.nic.in/textbook/pdf/lemh2ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Class XII rationalisation booklet", url: "https://ncert.nic.in/pdf/BookletClass12.pdf", note: "Use to spot deleted topics, but this booklet is from 2022. The CBSE 2026-27 curriculum PDFs on cbseacademic.nic.in are the final word." }
+  { title: "Physics Part I (English)", url: "https://ncert.nic.in/textbook/pdf/leph1ps.pdf", note: "Opened; marked Reprint 2026-27." },
+  { title: "Physics Part II (English)", url: "https://ncert.nic.in/textbook/pdf/leph2ps.pdf", note: "Opened; the extracted text did not show a 2026-27 reprint line." },
+  { title: "Physics Part I (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhph1ps.pdf", note: "Opened; marked Reprint 2026-27." },
+  { title: "Physics Part II (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhph2ps.pdf", note: "Opened; marked Reprint 2026-27." },
+  { title: "Chemistry Part I (English)", url: "https://ncert.nic.in/textbook/pdf/lech1ps.pdf", note: "Opened; Reprint 2026-27 of the October 2022 revised edition." },
+  { title: "Chemistry Part II (English)", url: "https://ncert.nic.in/textbook/pdf/lech2ps.pdf", note: "Opened; Reprint 2026-27 of the November 2022 revised edition." },
+  { title: "Chemistry: Solutions chapter (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhch101.pdf", note: "Opened; Reprint 2026-27. Other Hindi Chemistry chapters were not verified; use the Hindi portal." },
+  { title: "Mathematics Part I (English)", url: "https://ncert.nic.in/textbook/pdf/lemh1ps.pdf", note: "Opened; Reprint 2026-27 of the October 2022 revised edition." },
+  { title: "Mathematics Part II (English)", url: "https://ncert.nic.in/textbook/pdf/lemh2ps.pdf", note: "Opened; Reprint 2026-27 of the January 2023 revised edition." },
+  { title: "NCERT Hindi textbook portal", url: "https://ncert.nic.in/textbook.php?ln=hi", note: "Opened, but direct Hindi Mathematics PDFs were not verified." },
+  { title: "NCERT Exemplar index", url: "https://ncert.nic.in/exemplar-problems.php?ln=en", note: "Opened. Includes legacy chapters (for example Communication Systems): filter against the syllabus." },
+  { title: "CBSE Physics syllabus 2026-27", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf", note: "Official; controls what is examinable." },
+  { title: "CBSE Chemistry syllabus 2026-27", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Chemistry_SecP2_2026-27.pdf", note: "Official; controls what is examinable." },
+  { title: "CBSE Maths syllabus 2026-27", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Maths_SecP2_2026-27.pdf", note: "Official; no chapter-wise weightage is given." },
+  { title: "Class XII rationalisation booklet", url: "https://ncert.nic.in/pdf/BookletClass12.pdf", note: "Use to spot deleted topics, but this booklet is from 2022. The CBSE 2026-27 curriculum PDFs are the final word." }
 ];
 
 /* status must be "Verified", "Partly verified" or "Unverified"; url null = no link button */
 const SITES = [
-  { name: "LearnCBSE", offers: "Chapter-wise PYQs, important questions and solutions for Physics, Chemistry and Maths", status: "Verified", detail: "page opened",
-    caution: "Cross-check answers with NCERT and official marking schemes", url: "https://www.learncbse.in/chapterwise-previous-years-questions-pyqs-solutions/" },
-  { name: "myCBSEguide", offers: "Notes, NCERT solutions, solved papers, tests and videos (best backup)", status: "Partly verified",
-    caution: "Also shows older-syllabus material; check every chapter against the current syllabus", url: null },
-  { name: "SelfStudys", offers: "Chapter-wise PYQs with solutions, especially Physics", status: "Partly verified",
-    caution: "Exact year coverage not verified", url: null },
-  { name: "Collegedunia", offers: "PYQs, notes, formula sheets, handwritten notes and solutions", status: "Unverified",
-    caution: "Current-syllabus and question-count claims were found through search results only", url: null },
-  { name: "CBSE.page", offers: "Free year-wise and chapter-wise PYQs (advertised)", status: "Unverified",
-    caution: "Found through search only", url: null },
-  { name: "eSaral", offers: "Free NCERT solutions and study material (advertised)", status: "Unverified",
-    caution: "Page not fully opened; 2026-27 status unverified", url: null },
-  { name: "Chemistry “10 Pages” YouTube video", offers: "Quick Chemistry revision", status: "Partly verified",
-    caution: "Found through search; the YouTube page was not opened. Search for it by name and check the date and syllabus", url: null }
+  { name: "ExamSIDE (Physics, Chemistry, Maths)", offers: "Chapter-wise PYQs with paper/year labels and worked answers. Best PYQ locator for Physics and Chemistry", status: "Verified", detail: "index and several chapter pages opened",
+    caution: "Often shows only 2 papers per chapter (mostly 2023/2024); answers not audited; some pages include out-of-syllabus questions", url: "https://questions.examside.com/past-years/cbse/class-12/physics" },
+  { name: "ClearSteps (Maths)", offers: "Chapter-wise Maths PYQs with 2023-24, 2024-25, 2025-26 session labels. Best Maths PYQ page checked", status: "Verified", detail: "page opened",
+    caution: "Some features prompt a free trial or WhatsApp verification; labels not checked against every CBSE paper", url: "https://clearsteps.co.in/cbse-class-12-maths/chapter-wise-pyq" },
+  { name: "Tiwari Academy (Hindi/English NCERT solutions)", offers: "NCERT solutions for all three subjects, Hindi and English", status: "Verified", detail: "subject pages opened",
+    caution: "Cross-check reasoning with NCERT; its Chapter 1 Physics page flags additional exercises as outside the syllabus", url: "https://hindi.tiwariacademy.com/ncert-solutions/class-12/physics/" },
+  { name: "Vedantu", offers: "Revision notes, formula pages and Exemplar solutions (Physics)", status: "Partly verified",
+    caution: "Some PDF solutions need sign-in; formula page omits some current topics and mentions legacy ones; Exemplar solutions include Communication Systems", url: "https://www.vedantu.com/revision-notes/cbse-class-12-physics-notes" },
+  { name: "Padhify", offers: "Chapter-wise and year-wise PYQs (2016-2025 claimed)", status: "Partly verified",
+    caution: "Only some questions are free; free account and access limits apply", url: "https://www.padhify.com/pyq/class-12/chemistry" },
+  { name: "SelfStudys", offers: "Chapter-wise PYQ PDFs with solutions claimed", status: "Partly verified",
+    caution: "Exact years and download gating not confirmed", url: "https://www.selfstudys.com/books/cbse-prev-paper/english/class-12-chapter-wise/physics/6853" },
+  { name: "StudiesToday", offers: "Notes, concept maps and papers", status: "Partly verified",
+    caution: "Mixes current and legacy chapters; individual files not checked", url: "https://www.studiestoday.com/concepts/310/mathematics.html" },
+  { name: "Collegedunia / LearnCBSE / Shiksha Nation formula sheets", offers: "Formula pages and PDFs", status: "Unverified",
+    caution: "Found through search only; files not opened. Check syllabus fit", url: null },
+  { name: "CBSE.page", offers: "PYQ banks and chapter PDFs (advertised)", status: "Unverified",
+    caution: "Found through search only; PDFs not opened", url: null }
 ];
 
 const SITE_RULES = "No private site is completely authoritative. NCERT and official CBSE material override any third-party answer. Several sites advertise 2026-27 material while still showing older chapters. Third-party claims about exact question counts, years, ads and solution quality are partly unverified.";
 
-const MATERIAL_GAPS = "No complete dedicated 2026-27 mind-map or formula-sheet collection was verified for all three subjects. The safest approach is to make your own formula sheet and Chemistry reaction chart directly from the current NCERT books (use the My formula sheet box in each chapter). Individual PYQ papers and solutions were not all opened, so exact repetition years for each topic cannot be claimed.";
+const MATERIAL_GAPS = "No complete 2026-27 mind-map or formula-sheet collection was verified for any subject; individual files were not opened. The safest approach is to make your own formula sheet and Chemistry reaction chart directly from the current NCERT books (use the My formula sheet box in each chapter). Individual PYQ papers and solutions were not all opened, so exact repetition years for each topic cannot be claimed.";
 
 /* Frequent topics (research summary), keyed "Subject|Chapter". Chapters without an entry show nothing. */
 const PRIORITY = (function () {

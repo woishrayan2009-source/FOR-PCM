@@ -49,9 +49,9 @@ const LECTURES = (function () {
   /* ---- Tabs ---- */
   const SUBJECTS = [
     { id: "physics", name: "Physics", kind: "subject",
-      note: "Formula-revision, derivation-revision and numerical-practice videos for Physics: not verified (only the Atoms numerical video was seen)." },
+      note: "Brahmastra is already watched: use it for targeted repair only. Formula, derivation and numerical-practice videos are listed under Quick revision (found by title in search; open and check before relying)." },
     { id: "chemistry", name: "Chemistry", kind: "subject",
-      note: "NCERT line-by-line lectures for d- and f-block and Coordination Compounds: see the Inorganic leads card." },
+      note: "Weak NCERT base: use Bharat Panchal NCERT ka NICHOD for d/f and Coordination, Organic Chemistry Conceptwise (reactions first), then Chapterwise 30 Minutes Revision." },
     { id: "maths", name: "Maths", kind: "subject",
       note: "Exercise numbers differ between sources for the revised NCERT. Search by topic name, not by number." },
     { id: "quick", name: "Quick revision", kind: "quick" },
@@ -61,7 +61,7 @@ const LECTURES = (function () {
   /* ---- Banner and fixed texts ---- */
   const BANNER = {
     lead: "Read first.",
-    text: "Individual video pages could not be opened during research, so video lengths and chapter-level contents are NOT verified. Playlist pages were seen for only some items. Check the title, upload date and syllabus on YouTube before relying on a lecture. Compare any 2025-26 or Boards 2026 label with the 2026-27 syllabus.",
+    text: "Your three playlists were checked from screenshots (first five videos each). Other video pages could not be opened during research, so their lengths and chapter-level contents are NOT verified. Check the title, upload date and syllabus on YouTube before relying on a lecture. Compare any 2025-26 or Boards 2026 label with the 2026-27 syllabus.",
     legend: [
       { label: "Playlist page seen", levels: ["Medium"] },
       { label: "Search snippet", levels: ["Medium", "Low"] },
@@ -77,21 +77,45 @@ const LECTURES = (function () {
   const PLAYLISTS = {
     maths: { title: "Class 12 Maths NCERT Detailed One Shot Series | 2025-26", owner: "cbseclass videos", videos: 13,
       url: LINKS.mathsPlaylist, verified: HOW.playlist, confidence: "Medium",
-      note: "13 videos for 13 chapters (inference). 2025-26 label: check syllabus.", playlistVideos: [] },
-    physics: { title: "BRAMHASTRA: Class 12 Physics Boards 2026 (Complete One Shots + PYQs)", owner: "Arvind Academy", videos: 28,
+      note: "13 videos, last updated 21 Jul 2025, one per chapter (inference). First five seen in screenshot. 2025-26 label: check syllabus.",
+      playlistVideos: [
+        { title: "Relations & Functions One Shot | Class 12 Maths Chapter 1 | Full NCERT Concept + PYQs", length: "3:09:41" },
+        { title: "Inverse Trigonometric Functions One Shot | Chapter 2 | Full NCERT + PYQs", length: "1:59:31" },
+        { title: "Matrices One Shot | Chapter 3 | Full NCERT Concept + PYQs", length: "2:33:34" },
+        { title: "Determinants One Shot | Chapter 4 | Full NCERT + PYQs | 2025-26", length: "2:22:02" },
+        { title: "Continuity & Differentiability One Shot | Chapter 5 | Full NCERT + PYQs", length: "2:58:53" },
+        { title: "(Videos 6-13 not seen in screenshots)" }
+      ] },
+    physics: { title: "BRAHMASTRA: Class 12 Physics Boards 2026 (Complete One Shots + PYQs)", owner: "Arvind Academy", videos: 28,
       url: LINKS.physicsPlaylist, verified: HOW.playlist, confidence: "Medium",
-      note: "Could be 14 one-shots + 14 PYQ videos (inference). Boards 2026 label.", playlistVideos: [] },
+      note: "Screenshot confirms the pattern: each chapter has a Full Chapter One Shot followed by a Last 10 Years PYQ video (14 + 14 = 28, inference for later chapters). You have already watched this playlist, so use it only as targeted repair for chapters where formulas or derivations do not come back from memory. Boards 2026 label.",
+      playlistVideos: [
+        { title: "Electric Charges & Fields Class 12 One Shot | Boards 2026 | Full Chapter + PYQs", length: "2:57:21" },
+        { title: "Electric Charges and Fields Class 12 PYQ | Last 10 Years Questions", length: "2:10:02" },
+        { title: "Potential & Capacitance Class 12 One Shot | Boards 2026 | Full Chapter + PYQs", length: "2:50:23" },
+        { title: "Potential and Capacitance Class 12 PYQ | Last 10 Years Questions", length: "1:44:38" },
+        { title: "Current Electricity Class 12 One Shot | Boards 2026 | Full Chapter + PYQs", length: "3:14:00" },
+        { title: "(Videos 6-28 not seen in screenshots)" }
+      ] },
     chemistry: { title: "Class 12 Chemistry Boards 2026 | One Shot", owner: "Bharat Panchal, Chemistry Guruji 2.0", videos: 11,
       url: LINKS.chemistryPlaylist, verified: HOW.playlist, confidence: "Medium",
-      note: "11 videos for 10 chapters; the extra one is unidentified. Boards 2026 label.", playlistVideos: [] }
+      note: "11 videos, last updated 20 Feb 2026. First five seen in screenshot (Prachand series). The 11th video is unidentified. Boards 2026 label.",
+      playlistVideos: [
+        { title: "Chapter 1 Class 12 Chemistry | Solutions in One Shot | Boards 2025-26 | Prachand Series" },
+        { title: "Chapter 02 Electrochemistry in One Shot | Prachand Batch | Boards 2026", length: "3:21:07" },
+        { title: "Chemical Kinetics in One Shot | Class 12 Chemistry Boards 2026", length: "2:32:39" },
+        { title: "d and f Block Elements One Shot | Class 12 Chemistry | Bharat Panchal Sir", length: "2:33:21" },
+        { title: "Coordination Compound in One Shot | Class 12 Chemistry Boards 2026 | Bharat Panchal Sir", length: "2:56:56" },
+        { title: "(Videos 6-11 not seen in screenshots)" }
+      ] }
   };
 
   /* ---- Top channels ---- */
   const CHANNELS = {
     physics: {
       list: [{ name: "Arvind Academy" }, { name: "Akshay Tyagi (NCERT Wallah channel)" }, { name: "Ashu Sir", confidence: "Low" }],
-      reason: "Arvind has the BRAMHASTRA one-shot playlist, a Boards 2027 chapter one-shot series, and NCERT-solutions and chapterwise playlists. Akshay Tyagi has a one-shot playlist and a full one-shot video, labelled Boards 2026.",
-      series: [{ channel: "Arvind Academy", text: "Yes. Search snippets show a Boards 2027 'One Shot | All Derivations + PYQs' title for Potential and Capacitance and an announcement of a 'Full Chapter 1 Shot'. Other playlists seen: NCERT Solutions (15 videos), Chapterwise One Shot (14 videos, 'Term I' in the title, so check syllabus), and BRAMHASTRA (28). A single full-syllabus Physics marathon from Arvind was not verified." }]
+      reason: "Arvind has the BRAHMASTRA one-shot playlist, a Boards 2027 chapter one-shot series, and NCERT-solutions and chapterwise playlists. Akshay Tyagi has a one-shot playlist and a full one-shot video, labelled Boards 2026.",
+      series: [{ channel: "Arvind Academy", text: "Yes. Search snippets show a Boards 2027 'One Shot | All Derivations + PYQs' title for Potential and Capacitance and an announcement of a 'Full Chapter 1 Shot'. Other playlists seen: NCERT Solutions (15 videos), Chapterwise One Shot (14 videos, 'Term I' in the title, so check syllabus), and BRAHMASTRA (28). A single full-syllabus Physics marathon from Arvind was not verified." }]
     },
     chemistry: {
       list: [{ name: "Bharat Panchal" }],
@@ -102,14 +126,14 @@ const LECTURES = (function () {
     maths: {
       list: [{ name: "cbseclass videos (your playlist)" }, { name: "PW Deepak Sir" }, { name: "Neha Agrawal", confidence: "Low" }],
       reason: "Your playlist is a 13-video chapter set. Deepak Sir has marathons labelled 2026-27.",
-      series: [{ channel: "cbseclass videos", text: "Your playlist is a 13-video one-shot set. An exercise-wise Integrals set also exists." }]
+      series: [{ channel: "cbseclass videos", text: "Your playlist is a 13-video one-shot set (last updated 21 Jul 2025). For Integrals, add Jain Tutor (primary) and VidyaWise / Rohit Solanki (backup)." }]
     }
   };
 
   /* ---- Marathons: channel, title, year, fit, how, confidence, url (no url = Search button) ---- */
   const MARATHONS = {
     physics: [
-      { channel: "Arvind Academy", title: "BRAMHASTRA playlist (28 videos)", year: "2026", fit: "Complete one-shots + PYQs; check syllabus", how: HOW.playlist, confidence: "Medium", url: LINKS.physicsPlaylist },
+      { channel: "Arvind Academy", title: "BRAHMASTRA playlist (28 videos)", year: "2026", fit: "Complete one-shots + PYQs; check syllabus", how: HOW.playlist, confidence: "Medium", url: LINKS.physicsPlaylist },
       { channel: "Akshay Tyagi", title: "Class 12 Physics Complete One Shot Revision, Full Board Exam Prep 2026", year: "2026", fit: "Single-video first pass; check syllabus", how: HOW.snippet, confidence: "Low", url: LINKS.tyagiFullPhysics },
       { channel: "NCERT Wallah (Akshay Tyagi)", title: "One-shot playlist, 13 videos", year: "2026", fit: "Chapter-by-chapter; 13 videos for 14 chapters, so one may be missing", how: HOW.playlist, confidence: "Medium", url: LINKS.ncertWallahPlaylist }
     ],
@@ -126,9 +150,9 @@ const LECTURES = (function () {
   };
 
   /* ---- Chapters. Names must match the plan keys in data/plan.js ("Subject|Chapter") ---- */
-  const PHYSICS_PLAYLIST = entry("Your BRAMHASTRA playlist", HOW.playlist);
+  const PHYSICS_PLAYLIST = entry("Your BRAHMASTRA playlist", HOW.playlist);
   const physics = [
-    chapter("physics", "Electric Charges & Fields", entry("Your BRAMHASTRA playlist / Arvind Boards 2027 one-shot", HOW.playlist), entry("Akshay Tyagi one-shot"), "Concept, derivations, PYQs", "Low", "Electric Charges and Fields Class 12 One Shot Arvind Academy Boards 2027"),
+    chapter("physics", "Electric Charges & Fields", entry("Your BRAHMASTRA playlist / Arvind Boards 2027 one-shot", HOW.playlist), entry("Akshay Tyagi one-shot"), "Concept, derivations, PYQs", "Low", "Electric Charges and Fields Class 12 One Shot Arvind Academy Boards 2027"),
     chapter("physics", "Potential & Capacitance", entry("Arvind “One Shot, All Derivations + PYQs, Boards 2027”", HOW.title), entry("Akshay Tyagi one-shot"), "Derivations, PYQs", "Medium", "Potential and Capacitance Class 12 One Shot All Derivations Arvind Academy"),
     chapter("physics", "Current Electricity", PHYSICS_PLAYLIST, entry("Arvind chapterwise one-shot"), "Concept, numericals", "Low", "Current Electricity Class 12 One Shot Boards 2027"),
     chapter("physics", "Moving Charges & Magnetism", PHYSICS_PLAYLIST, entry("Akshay Tyagi one-shot"), "Derivations", "Low", "Moving Charges and Magnetism Class 12 One Shot Arvind Academy"),
@@ -150,8 +174,8 @@ const LECTURES = (function () {
     chapter("chemistry", "Solutions", entry("Your Bharat Panchal playlist", HOW.playlist, null, { text: "“Solution in One Shot”", url: LINKS.solutionOneShot }), entry("Bharat “NCERT ka Nichod of Solutions”", HOW.title), "Theory, numericals, NCERT recap", "Medium", "Solutions Class 12 Chemistry One Shot Bharat Panchal Boards 2027"),
     chapter("chemistry", "Electrochemistry", CHEM_PLAYLIST, entry("Bharat Rapid Revision"), "Numericals", "Low", "Electrochemistry Class 12 One Shot Bharat Panchal"),
     chapter("chemistry", "Chemical Kinetics", CHEM_PLAYLIST, NONE, "Derivations, numericals", "Low", "Chemical Kinetics Class 12 One Shot Bharat Panchal"),
-    chapter("chemistry", "d- & f-Block", entry("Bharat “All Reactions of d and f Block Elements”", HOW.telegram, LINKS.dfReactions), entry("See the Inorganic leads card"), "Reactions, K2Cr2O7, KMnO4", "Low", "d and f Block Class 12 One Shot Bharat Panchal NCERT line by line"),
-    chapter("chemistry", "Coordination Compounds", CHEM_PLAYLIST, NONE, "Naming, isomerism, bonding", "Low", "Coordination Compounds Class 12 One Shot Bharat Panchal"),
+    chapter("chemistry", "d- & f-Block", entry("Bharat “NCERT ka NICHOD” (d and f), then your playlist", HOW.snippet), entry("Bharat “All Reactions of d and f Block Elements”", HOW.telegram, LINKS.dfReactions), "Reactions, K2Cr2O7, KMnO4", "Low", "d and f Block Class 12 One Shot Bharat Panchal NCERT line by line"),
+    chapter("chemistry", "Coordination Compounds", entry("Bharat “NCERT ka NICHOD” (Coordination), then your playlist", HOW.snippet), CHEM_PLAYLIST, "Naming, isomerism, bonding", "Low", "Coordination Compounds Class 12 One Shot Bharat Panchal"),
     chapter("chemistry", "Haloalkanes & Haloarenes", entry("Bharat “Full Chapter in One Shot”", HOW.playboard), NONE, "Mechanisms, reactions", "Low", "Haloalkanes and Haloarenes Class 12 One Shot Bharat Panchal"),
     chapter("chemistry", "Alcohols, Phenols, Ethers", entry("Bharat “Important Organic Mechanism, One Shot”", HOW.title), NONE, "Mechanisms", "Low", "Alcohols Phenols Ethers Class 12 One Shot Bharat Panchal"),
     chapter("chemistry", "Aldehydes, Ketones, Acids", CHEM_PLAYLIST, entry("Bharat “All Name Reaction in One Shot”", HOW.telegram, LINKS.nameReactions), "Named reactions, conversions", "Low", "Aldehydes Ketones Carboxylic Acids Class 12 One Shot Bharat Panchal"),
@@ -162,7 +186,7 @@ const LECTURES = (function () {
   /* Maths: every chapter except Integrals shares the same lecture text. [plan name, full name for search] */
   const MATHS_DEFAULT = {
     primary: entry("Your cbseclass videos one-shot playlist (13 videos; order not seen)", HOW.playlist),
-    backup: entry("PW Deepak Sir marathon (2026-27)", HOW.snippet),
+    backup: entry("CBSE Class Videos exercise-wise (Determinants, C&D, 3D); PW Deepak Sir marathon (2026-27)", HOW.snippet),
     covers: "Chapter one-shot and exercise solutions"
   };
   const mathsChapter = ([name, fullName]) =>
@@ -171,7 +195,7 @@ const LECTURES = (function () {
     ...[["Relations & Functions", "Relations and Functions"], ["Inverse Trig", "Inverse Trigonometric Functions"], ["Matrices", "Matrices"],
         ["Determinants", "Determinants"], ["Continuity & Differentiability", "Continuity and Differentiability"],
         ["Applications of Derivatives", "Applications of Derivatives"]].map(mathsChapter),
-    chapter("maths", "Integrals", entry("Your cbseclass videos one-shot playlist, plus the exercise-wise Integrals set (see the Integrals card)"), entry("LearnoHub Hindi one-shot; Ushank Sir 6h05m one-shot (2024-25, check syllabus)"), "Standard forms, methods, definite integrals", "Medium", "CBSE Class Videos Integrals Exercise 7"),
+    chapter("maths", "Integrals", entry("Jain Tutor Integration Full Chapter Playlist (see the Integrals card), plus your cbseclass videos one-shot", HOW.snippet), entry("VidyaWise / Rohit Solanki “Ch 7 Integrals One Shot”; Jain Tutor “All Formulas of Integration”", HOW.snippet), "Standard forms, methods, definite integrals", "Medium", "CBSE Class Videos Integrals Exercise 7"),
     ...[["Applications of Integrals", "Applications of Integrals"], ["Differential Equations", "Differential Equations"], ["Vectors", "Vector Algebra"],
         ["3D Geometry", "Three Dimensional Geometry"], ["Linear Programming", "Linear Programming"], ["Probability", "Probability"]].map(mathsChapter)
   ];
@@ -184,23 +208,33 @@ const LECTURES = (function () {
     { subject: "Chemistry", asset: "Bharat “All Reactions of d and f Block”", how: HOW.telegram, confidence: "Low", url: LINKS.dfReactions },
     { subject: "Chemistry", asset: "Bharat “Most Important Question Series”", how: HOW.telegram, confidence: "Low", url: LINKS.importantQuestions },
     { subject: "Physics", asset: "Arvind “Atoms Numericals in 20 Minutes”", how: HOW.telegram, confidence: "Low", url: LINKS.atomsNumericals },
+    { subject: "Physics", asset: "NCERT Wallah / Rakshak Sir: Class 12 Physics All Chapter-Wise Formulas in One Shot (last-day formula recall)", how: HOW.snippet, confidence: "Low" },
+    { subject: "Physics", asset: "Next Toppers: All Most Important Derivations of Physics Class 12th (attempt each derivation yourself first)", how: HOW.snippet, confidence: "Low" },
+    { subject: "Physics", asset: "Shailendra Sir / NCERT Wallah: Class 12 Physics All Important Derivations Book 1 Revision (Electrostatics, Current, Magnetism)", how: HOW.snippet, confidence: "Low" },
+    { subject: "Physics", asset: "Class 12 Physics Top 20 Most Important Derivations (final-day priority list only, not complete)", how: HOW.snippet, confidence: "Low" },
+    { subject: "Chemistry", asset: "Bharat Panchal: NCERT ka NICHOD (chapterwise; start with d/f and Coordination)", how: HOW.snippet, confidence: "Medium" },
+    { subject: "Chemistry", asset: "Bharat Panchal: Organic Chemistry Conceptwise (reaction families, named reactions, conversions)", how: HOW.snippet, confidence: "Medium" },
+    { subject: "Chemistry", asset: "Bharat Panchal: Chapterwise 30 Minutes Revision (second pass) and 15 Minutes Revision (final 2-3 days)", how: HOW.snippet, confidence: "Medium" },
+    { subject: "Chemistry", asset: "Bharat Panchal: Chapterwise Most Important Topics, Marks Booster PYQ, NCERT Diamond Questions", how: HOW.snippet, confidence: "Medium" },
+    { subject: "Maths", asset: "Jain Tutor: All Formulas of Integration (before every Integrals session)", how: HOW.snippet, confidence: "Medium" },
+    { subject: "Maths", asset: "VidyaWise / Rohit Solanki: Class 12 Maths One Shot playlist (rapid chapter revision)", how: HOW.snippet, confidence: "Medium" },
     { subject: "Maths", asset: "Deepak Sir marathons (see Marathons)", how: HOW.snippet, confidence: "Medium",
       links: [{ label: "Half Yearly Marathon 2026-27", url: LINKS.deepakHalfYearly }, { label: "Backlog Marathon 2026-27", url: LINKS.deepakBacklog }] }
   ];
 
   const NOT_FOUND = {
     title: "Not found",
-    items: ["“formula in 10 minutes”", "“mind map”", "“all derivations in one video” for 2026-27", "A Maths “all integration formulas” video"]
+    items: ["A complete verified 2026-27 Physics mind-map set", "Exact runtimes of several marathon videos", "A single CBSE-specific full Physics numerical-practice marathon"]
   };
 
   /* ---- Integrals deep set (Maths tab) ---- */
   const INTEGRALS = {
     title: "Integrals deep set",
-    primary: "cbseclass videos has an exercise-wise Integrals set. A Class Central listing shows an intro plus a hints-and-solutions video for each exercise from Ex 7.1 to 7.11, plus the Miscellaneous Exercise. The listing is undated and the numbering matches the older book, so match by topic against your revised NCERT.",
-    hindi: "LearnoHub, “Integration Class 12 | Integrals NCERT Chapter 7 One Shot”.",
-    long: "Ushank Sir, “Integration One Shot Maths 2024-25 Zero to Hero” (6h05m). Labelled 2024-25, so check syllabus.",
+    primary: "Jain Tutor, Integration Full Chapter Playlist: exercise-wise and example-wise videos (standard forms, substitution, by parts/ILATE, partial fractions, definite integrals). Use alongside your cbseclass videos one-shot. Verified through search results only.",
+    hindi: "Backup after Jain Tutor: VidyaWise / Rohit Solanki, “Ch 7 Integrals One Shot” (NCERT concepts, examples, exercises, important questions). Also Jain Tutor, “All Formulas of Integration”, before each practice session.",
+    long: "Exercise numbering differs between old and revised NCERT: match by topic against your current book. Solve examples first, then Exercises 7.1 to 7.11 selectively, then the Miscellaneous Exercise.",
     confidence: ["Low", "Medium"],
-    basis: "Class Central listing and snippets",
+    basis: "Search results (Jain Tutor, VidyaWise)",
     searches: [
       "Integration by substitution Class 12",
       "Integration by parts ILATE Class 12",
@@ -247,10 +281,10 @@ const LECTURES = (function () {
   const GAPS = {
     title: "Gaps",
     items: [
-      "Video-level titles, order and lengths for your three playlists.",
-      "Physics formula-sheet and all-derivations videos made for 2026-27.",
+      "Video titles 6 onward in each of your three playlists (only the first five were in the screenshots).",
+      "Runtimes of several formula/derivation videos (found by title only).",
       "A second verified Chemistry channel.",
-      "A verified NCERT line-by-line Coordination Compounds lecture.",
+      
       "A single full-syllabus Physics marathon from Arvind."
     ]
   };
