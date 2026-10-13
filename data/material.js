@@ -22,7 +22,7 @@ const MATERIAL_TEXT = {
   noItems: "No items listed yet. Add your own below.",
   noLinks: "No links added yet. Paste verified links into data/material.js.",
   oneDayNote: "These come from a research summary. Years of repetition are not verified.",
-  ncertNote: "Hindi-medium PDFs are on the NCERT textbook portal. NCERT Exemplar is useful for harder practice (Physics, Chemistry reasoning, Maths), but filter it against the 2026-27 syllabus because not every old Exemplar question is examinable.",
+  ncertNote: "Official Hindi Physics PDFs are verified (links below). For Chemistry only the Hindi Solutions chapter was verified, and direct Hindi Maths PDFs were not; check the NCERT portal. NCERT Exemplar is useful for harder practice (Physics, Chemistry reasoning, Maths), but filter it against the 2026-27 syllabus because not every old Exemplar question is examinable.",
   sitesNote: "To add a link for a site with no URL, open the site yourself, confirm it works and is current, then paste its URL into data/material.js.",
   notRequiredNote: "Per the 2026-27 syllabus PDFs; verify on cbseacademic.nic.in"
 };
@@ -31,23 +31,23 @@ const MATERIAL_TEXT = {
 const CHAPTERS_MATERIAL = (function () {
   const items = {
     Physics: {
-      "Electric Charges & Fields": ["Dipole field and torque (derivation)", "Gauss's law applications (derivation)"],
-      "Potential & Capacitance": ["Parallel-plate capacitance (derivation)", "Capacitor combinations (numerical set)"],
-      "Current Electricity": ["Kirchhoff loops (numerical set)"],
+      "Electric Charges & Fields": ["Coulomb's law, vector form (derivation)", "Dipole field, axial and equatorial, and torque (derivation)", "Gauss's law applications (derivation)"],
+      "Potential & Capacitance": ["Potential due to a dipole (derivation)", "Parallel-plate capacitance (derivation)", "Capacitance with a dielectric (derivation)", "Capacitor combinations (numerical set)"],
+      "Current Electricity": ["Drift velocity and resistivity (derivation)", "Kirchhoff loops (numerical set)", "Resistance networks (numerical set)"],
       "Moving Charges & Magnetism": [
         "Biot-Savart: loop on axis (derivation)", "Ampere's law for a wire (derivation)",
         "Force between parallel wires (derivation)", "Torque on a loop (derivation)",
         "Galvanometer conversions and shunts (derivation and numerical set)"],
       "Magnetism & Matter": [],
-      "EMI": ["Solenoid inductances (derivation)"],
+      "EMI": ["Motional emf (derivation)", "Self and mutual inductance (derivation)", "Solenoid inductances (derivation)"],
       "AC": ["LCR impedance and resonance (derivation)", "Transformer (derivation)", "LCR and transformer (numerical set)"],
       "EM Waves": [],
-      "Ray Optics": ["Mirror, lens maker and prism formulas (derivations)", "Lens combinations (numerical set)"],
-      "Wave Optics": ["Huygens proofs (derivation)"],
+      "Ray Optics": ["Mirror, lens maker and prism formulas (derivations)", "Lens combinations (numerical set)", "Optical instruments (numerical set)"],
+      "Wave Optics": ["Huygens proofs (derivation)", "YDSE (numerical set)"],
       "Dual Nature": ["Photoelectric and de Broglie (numerical set)"],
       "Atoms": ["Bohr radius, velocity and energy (derivation)", "Bohr energy levels (numerical set)"],
-      "Nuclei": ["Mass defect and binding energy (numerical set)"],
-      "Semiconductors": []
+      "Nuclei": ["Radioactive decay law (derivation)", "Mass defect and binding energy (numerical set)", "Half-life (numerical set)"],
+      "Semiconductors": ["Rectifier working (derivation)"]
     },
     Chemistry: {
       "Solutions": [],
@@ -55,10 +55,10 @@ const CHAPTERS_MATERIAL = (function () {
       "Chemical Kinetics": [],
       "d- & f-Block": ["Read NCERT line by line, including Intext questions and the Applications table"],
       "Coordination Compounds": ["Read NCERT line by line, including Intext questions and the Applications table"],
-      "Haloalkanes & Haloarenes": ["Finkelstein", "Swarts", "Sandmeyer (also Amines)", "Wurtz", "Fittig", "Wurtz-Fittig"],
-      "Alcohols, Phenols, Ethers": ["Reimer-Tiemann", "Kolbe", "Williamson"],
-      "Aldehydes, Ketones, Acids": ["Rosenmund", "Stephen", "Etard", "Gattermann-Koch", "Cannizzaro", "Aldol", "Clemmensen", "Wolff-Kishner", "HVZ"],
-      "Amines": ["Gabriel", "Hoffmann bromamide", "Carbylamine", "Hinsberg"],
+      "Haloalkanes & Haloarenes": ["SN1 and SN2 mechanisms", "Saytzeff rule", "Finkelstein", "Swarts", "Sandmeyer (also Amines)", "Wurtz", "Fittig", "Wurtz-Fittig"],
+      "Alcohols, Phenols, Ethers": ["Lucas test", "Reimer-Tiemann", "Kolbe", "Williamson"],
+      "Aldehydes, Ketones, Acids": ["Rosenmund", "Stephen", "Etard", "Gattermann-Koch", "Cannizzaro", "Aldol", "Clemmensen", "Wolff-Kishner", "Tollens' and Fehling's tests", "HVZ", "Esterification"],
+      "Amines": ["Gabriel", "Hoffmann bromamide", "Carbylamine", "Hinsberg", "Diazotisation and coupling"],
       "Biomolecules": []
     },
     Maths: {
@@ -112,7 +112,15 @@ const CHECKLISTS = (function () {
 
   return [
     { id: "derivations", subject: "Physics", title: "Derivations to drill (Physics)", items: [
-      i("Dipole field and torque", "Electric Charges & Fields", "Dipole field and torque (derivation)"),
+      i("Coulomb's law, vector form", "Electric Charges & Fields", "Coulomb's law, vector form (derivation)"),
+      i("Dipole field and torque", "Electric Charges & Fields", "Dipole field, axial and equatorial, and torque (derivation)"),
+      i("Potential due to a dipole", "Potential & Capacitance", "Potential due to a dipole (derivation)"),
+      i("Capacitance with a dielectric", "Potential & Capacitance", "Capacitance with a dielectric (derivation)"),
+      i("Drift velocity and resistivity", "Current Electricity", "Drift velocity and resistivity (derivation)"),
+      i("Motional emf", "EMI", "Motional emf (derivation)"),
+      i("Self and mutual inductance", "EMI", "Self and mutual inductance (derivation)"),
+      i("Radioactive decay law", "Nuclei", "Radioactive decay law (derivation)"),
+      i("Rectifier working", "Semiconductors", "Rectifier working (derivation)"),
       i("Gauss applications", "Electric Charges & Fields", "Gauss's law applications (derivation)"),
       i("Parallel-plate capacitance", "Potential & Capacitance", "Parallel-plate capacitance (derivation)"),
       i("Biot-Savart loop on axis", "Moving Charges & Magnetism", "Biot-Savart: loop on axis (derivation)"),
@@ -135,15 +143,19 @@ const CHECKLISTS = (function () {
       i("Lens combinations", "Ray Optics", "Lens combinations (numerical set)"),
       i("Photoelectric and de Broglie", "Dual Nature", "Photoelectric and de Broglie (numerical set)"),
       i("Bohr energy levels", "Atoms", "Bohr energy levels (numerical set)"),
-      i("Mass defect and binding energy", "Nuclei", "Mass defect and binding energy (numerical set)")
+      i("Mass defect and binding energy", "Nuclei", "Mass defect and binding energy (numerical set)"),
+      i("Resistance networks", "Current Electricity", "Resistance networks (numerical set)"),
+      i("Optical instruments", "Ray Optics", "Optical instruments (numerical set)"),
+      i("YDSE", "Wave Optics", "YDSE (numerical set)"),
+      i("Half-life", "Nuclei", "Half-life (numerical set)")
     ] },
     { id: "reactions", subject: "Chemistry", title: "Named reactions (Chemistry)", items: [].concat(
-      rx(HAL, ["Finkelstein", "Swarts"]),
+      rx(HAL, ["SN1 and SN2 mechanisms", "Saytzeff rule", "Finkelstein", "Swarts"]),
       [i("Sandmeyer", HAL, "Sandmeyer (also Amines)")],
       rx(HAL, ["Wurtz", "Fittig", "Wurtz-Fittig"]),
-      rx(ALC, ["Reimer-Tiemann", "Kolbe", "Williamson"]),
-      rx(ALD, ["Rosenmund", "Stephen", "Etard", "Gattermann-Koch", "Cannizzaro", "Aldol", "Clemmensen", "Wolff-Kishner", "HVZ"]),
-      rx(AMI, ["Gabriel", "Hoffmann bromamide", "Carbylamine", "Hinsberg"])
+      rx(ALC, ["Lucas test", "Reimer-Tiemann", "Kolbe", "Williamson"]),
+      rx(ALD, ["Rosenmund", "Stephen", "Etard", "Gattermann-Koch", "Cannizzaro", "Aldol", "Clemmensen", "Wolff-Kishner", "Tollens' and Fehling's tests", "HVZ", "Esterification"]),
+      rx(AMI, ["Gabriel", "Hoffmann bromamide", "Carbylamine", "Hinsberg", "Diazotisation and coupling"])
     ) },
     { id: "chain", subject: "Chemistry", title: "Conversion chain (Chemistry)",
       intro: "Halo -> Alcohol -> Aldehyde -> Acid -> Amide -> Amine -> Diazonium",
@@ -184,64 +196,79 @@ const ONE_DAY = {
 
 /* Not required tab */
 const NOT_REQUIRED = [
-  { subject: "Physics", items: ["YDSE fringe-width derivation (final expression only)", "Capacitor energy derivation (formula only)"] },
-  { subject: "Maths", items: ["Integrals as limit of a sum"] },
-  { subject: "Chemistry", note: "Formative-only, read only if time remains.",
-    items: ["Surface Chemistry", "Isolation of Elements", "Polymers", "Chemistry in Everyday Life"] }
+  { subject: "Physics", items: ["YDSE fringe-width derivation (final expression only)", "Capacitor energy derivation (formula only)", "Quantitative solenoid derivation (treated qualitatively; verify in the PDF)", "Communication Systems (removed chapter)", "Transistors and logic gates (not in the current Semiconductors list)"] },
+  { subject: "Maths", items: ["Integrals as limit of a sum", "Equation of a plane in 3D Geometry (not confirmed in the syllabus; verify in the PDF)", "Random variables, mean, variance, Bernoulli trials (in the plan research but not in the official topic list; verify in the PDF)"] },
+  { subject: "Chemistry", note: "Outside the current 10 units. Do not prepare; check sub-topic exclusions in the official PDF only.",
+    items: ["Solid State", "Surface Chemistry", "Isolation of Elements (Metallurgy)", "Polymers", "Chemistry in Everyday Life"] }
 ];
 
 /* Resources tab */
 const NCERT_LINKS = [
-  { title: "Physics Part I (English)", url: "https://ncert.nic.in/textbook/pdf/leph1ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Physics Part II (English)", url: "https://ncert.nic.in/textbook/pdf/leph2ps.pdf", note: "Opened; the extracted text did not show a 2026-27 reprint line." },
+  { title: "Physics Part I", url: "https://ncert.nic.in/textbook/pdf/leph1ps.pdf", note: "Opened; marked Reprint 2026-27." },
+  { title: "Physics Part II", url: "https://ncert.nic.in/textbook/pdf/leph2ps.pdf", note: "Opened; the extracted text did not show a Reprint 2026-27 line, so that label is unverified." },
   { title: "Physics Part I (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhph1ps.pdf", note: "Opened; marked Reprint 2026-27." },
   { title: "Physics Part II (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhph2ps.pdf", note: "Opened; marked Reprint 2026-27." },
-  { title: "Chemistry Part I (English)", url: "https://ncert.nic.in/textbook/pdf/lech1ps.pdf", note: "Opened; Reprint 2026-27 of the October 2022 revised edition." },
-  { title: "Chemistry Part II (English)", url: "https://ncert.nic.in/textbook/pdf/lech2ps.pdf", note: "Opened; Reprint 2026-27 of the November 2022 revised edition." },
-  { title: "Chemistry: Solutions chapter (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhch101.pdf", note: "Opened; Reprint 2026-27. Other Hindi Chemistry chapters were not verified; use the Hindi portal." },
-  { title: "Mathematics Part I (English)", url: "https://ncert.nic.in/textbook/pdf/lemh1ps.pdf", note: "Opened; Reprint 2026-27 of the October 2022 revised edition." },
-  { title: "Mathematics Part II (English)", url: "https://ncert.nic.in/textbook/pdf/lemh2ps.pdf", note: "Opened; Reprint 2026-27 of the January 2023 revised edition." },
-  { title: "NCERT Hindi textbook portal", url: "https://ncert.nic.in/textbook.php?ln=hi", note: "Opened, but direct Hindi Mathematics PDFs were not verified." },
-  { title: "NCERT Exemplar index", url: "https://ncert.nic.in/exemplar-problems.php?ln=en", note: "Opened. Includes legacy chapters (for example Communication Systems): filter against the syllabus." },
-  { title: "CBSE Physics syllabus 2026-27", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf", note: "Official; controls what is examinable." },
-  { title: "CBSE Chemistry syllabus 2026-27", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Chemistry_SecP2_2026-27.pdf", note: "Official; controls what is examinable." },
-  { title: "CBSE Maths syllabus 2026-27", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Maths_SecP2_2026-27.pdf", note: "Official; no chapter-wise weightage is given." },
-  { title: "Class XII rationalisation booklet", url: "https://ncert.nic.in/pdf/BookletClass12.pdf", note: "Use to spot deleted topics, but this booklet is from 2022. The CBSE 2026-27 curriculum PDFs are the final word." }
+  { title: "Chemistry Part I", url: "https://ncert.nic.in/textbook/pdf/lech1ps.pdf", note: "Opened; Reprint 2026-27 of the October 2022 revised edition. Units 1-5." },
+  { title: "Chemistry Part II", url: "https://ncert.nic.in/textbook/pdf/lech2ps.pdf", note: "Opened; Reprint 2026-27 of the November 2022 revised edition. Units 6-10." },
+  { title: "Chemistry, Solutions chapter (Hindi)", url: "https://ncert.nic.in/textbook/pdf/lhch101.pdf", note: "Opened; Reprint 2026-27. Other Hindi Chemistry chapters were not verified." },
+  { title: "Mathematics Part I", url: "https://ncert.nic.in/textbook/pdf/lemh1ps.pdf", note: "Opened; Reprint 2026-27 of the October 2022 revised edition. Chapters 1-6." },
+  { title: "Mathematics Part II", url: "https://ncert.nic.in/textbook/pdf/lemh2ps.pdf", note: "Opened; Reprint 2026-27 of the January 2023 revised edition. Chapters 7-13." },
+  { title: "CBSE 2026-27 Physics syllabus (042)", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf", note: "Official. Use it as the filter for NCERT and Exemplar; check unit marks and exclusions here." },
+  { title: "CBSE 2026-27 Chemistry syllabus (043)", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Chemistry_SecP2_2026-27.pdf", note: "Official." },
+  { title: "CBSE 2026-27 Mathematics syllabus (041)", url: "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Maths_SecP2_2026-27.pdf", note: "Official. Standard Mathematics, not Applied." },
+  { title: "NCERT Exemplar index", url: "https://ncert.nic.in/exemplar-problems.php?ln=en", note: "Official index. Filter against the syllabus; older Exemplar books include legacy chapters." },
+  { title: "Class XII rationalisation booklet", url: "https://ncert.nic.in/pdf/BookletClass12.pdf", note: "Use to spot deleted topics, but this booklet is from 2022. The CBSE 2026-27 curriculum PDFs on cbseacademic.nic.in are the final word." }
 ];
 
 /* status must be "Verified", "Partly verified" or "Unverified"; url null = no link button */
 const SITES = [
-  { name: "ExamSIDE (Physics, Chemistry, Maths)", offers: "Chapter-wise PYQs with paper/year labels and worked answers. Best PYQ locator for Physics and Chemistry", status: "Verified", detail: "index and several chapter pages opened",
-    caution: "Often shows only 2 papers per chapter (mostly 2023/2024); answers not audited; some pages include out-of-syllabus questions", url: "https://questions.examside.com/past-years/cbse/class-12/physics" },
-  { name: "ClearSteps (Maths)", offers: "Chapter-wise Maths PYQs with 2023-24, 2024-25, 2025-26 session labels. Best Maths PYQ page checked", status: "Verified", detail: "page opened",
-    caution: "Some features prompt a free trial or WhatsApp verification; labels not checked against every CBSE paper", url: "https://clearsteps.co.in/cbse-class-12-maths/chapter-wise-pyq" },
-  { name: "Tiwari Academy (Hindi/English NCERT solutions)", offers: "NCERT solutions for all three subjects, Hindi and English", status: "Verified", detail: "subject pages opened",
-    caution: "Cross-check reasoning with NCERT; its Chapter 1 Physics page flags additional exercises as outside the syllabus", url: "https://hindi.tiwariacademy.com/ncert-solutions/class-12/physics/" },
-  { name: "Vedantu", offers: "Revision notes, formula pages and Exemplar solutions (Physics)", status: "Partly verified",
-    caution: "Some PDF solutions need sign-in; formula page omits some current topics and mentions legacy ones; Exemplar solutions include Communication Systems", url: "https://www.vedantu.com/revision-notes/cbse-class-12-physics-notes" },
-  { name: "Padhify", offers: "Chapter-wise and year-wise PYQs (2016-2025 claimed)", status: "Partly verified",
-    caution: "Only some questions are free; free account and access limits apply", url: "https://www.padhify.com/pyq/class-12/chemistry" },
-  { name: "SelfStudys", offers: "Chapter-wise PYQ PDFs with solutions claimed", status: "Partly verified",
-    caution: "Exact years and download gating not confirmed", url: "https://www.selfstudys.com/books/cbse-prev-paper/english/class-12-chapter-wise/physics/6853" },
-  { name: "StudiesToday", offers: "Notes, concept maps and papers", status: "Partly verified",
-    caution: "Mixes current and legacy chapters; individual files not checked", url: "https://www.studiestoday.com/concepts/310/mathematics.html" },
-  { name: "Collegedunia / LearnCBSE / Shiksha Nation formula sheets", offers: "Formula pages and PDFs", status: "Unverified",
-    caution: "Found through search only; files not opened. Check syllabus fit", url: null },
-  { name: "CBSE.page", offers: "PYQ banks and chapter PDFs (advertised)", status: "Unverified",
-    caution: "Found through search only; PDFs not opened", url: null }
+  { name: "ExamSIDE (Physics)", offers: "Best PYQ locator found: chapter-wise questions with paper/year labels and worked answers", status: "Partly verified", detail: "pages opened; answers not audited",
+    caution: "Use it to find questions, not as the final authority. Hindi not verified. Several pages show only two papers", url: "https://questions.examside.com/past-years/cbse/class-12/physics" },
+  { name: "ExamSIDE (Chemistry)", offers: "Chapter-wise Chemistry PYQs with solutions", status: "Partly verified", detail: "pages opened; Alcohols and Amines pages not opened",
+    caution: "Claims 2021-2025 but opened pages mostly showed 2023/2024 papers", url: "https://questions.examside.com/past-years/cbse/class-12/chemistry" },
+  { name: "ExamSIDE (Maths)", offers: "Chapter-wise Maths PYQs with worked solutions (backup to ClearSteps)", status: "Partly verified", detail: "pages opened",
+    caution: "Index also has an extra Complex Numbers category (not in your syllabus)", url: "https://questions.examside.com/past-years/cbse/class-12/mathematics" },
+  { name: "ClearSteps (Maths PYQs)", offers: "Chapter-wise Maths questions with 2023-24 to 2025-26 session labels", status: "Partly verified", detail: "page opened",
+    caution: "Some features ask for a free trial or WhatsApp verification; labels are third-party", url: "https://clearsteps.co.in/cbse-class-12-maths/chapter-wise-pyq" },
+  { name: "Tiwari Academy (Physics)", offers: "NCERT solutions in English and Hindi (best backup)", status: "Partly verified", detail: "pages opened",
+    caution: "Cross-check with NCERT. Its Chapter 1 page marks Additional Exercises as outside the syllabus", url: "https://hindi.tiwariacademy.com/ncert-solutions/class-12/physics/" },
+  { name: "Tiwari Academy (Chemistry)", offers: "NCERT solutions in English and Hindi", status: "Partly verified", detail: "English page opened; Hindi page not opened",
+    caution: "Cross-check with NCERT", url: "https://www.tiwariacademy.com/ncert-solutions/class-12/chemistry/" },
+  { name: "Tiwari Academy (Maths)", offers: "NCERT solutions, MCQs and chapter resources, Hindi and English", status: "Partly verified", detail: "page opened",
+    caution: "Its Integrals guide has formulas, but its claims about yearly repeats and marks are not verified", url: "https://www.tiwariacademy.com/ncert-solutions/class-12/maths/" },
+  { name: "Padhify", offers: "Chemistry and Maths PYQs by chapter and year (claims 2016-2025)", status: "Partly verified", detail: "search results only",
+    caution: "A free account is needed; the 2025 Chemistry page shows only 10 free questions", url: "https://www.padhify.com/pyq/class-12/mathematics" },
+  { name: "Vedantu", offers: "Physics revision notes, formula page, Exemplar solutions", status: "Partly verified", detail: "pages opened",
+    caution: "Some PDFs need sign-in. The formula page misses some current topics and mentions legacy ones", url: "https://www.vedantu.com/revision-notes/cbse-class-12-physics-notes" },
+  { name: "StudiesToday", offers: "Notes, mind maps and practice material", status: "Partly verified", detail: "directories opened; PDFs not opened",
+    caution: "Mixes current and legacy chapters. Filter by the 10 Chemistry units", url: "https://www.studiestoday.com/useful-resources/447/chemistry.html" },
+  { name: "LearnCBSE", offers: "Chapter-wise PYQs, important questions and solutions for Physics, Chemistry and Maths", status: "Verified", detail: "page opened",
+    caution: "Cross-check answers with NCERT and official marking schemes", url: "https://www.learncbse.in/chapterwise-previous-years-questions-pyqs-solutions/" },
+  { name: "myCBSEguide", offers: "Notes, NCERT solutions, solved papers, tests and videos (best backup)", status: "Partly verified",
+    caution: "Also shows older-syllabus material; check every chapter against the current syllabus", url: null },
+  { name: "SelfStudys", offers: "Chapter-wise PYQs with solutions for Physics, Chemistry and Maths", status: "Partly verified", detail: "landing pages opened",
+    caution: "Exact years and download gating not verified", url: "https://www.selfstudys.com/books/cbse-prev-paper/english/class-12-chapter-wise/physics/6853" },
+  { name: "Collegedunia", offers: "PYQs, notes, formula sheets, handwritten notes and solutions", status: "Unverified",
+    caution: "Current-syllabus and question-count claims were found through search results only", url: null },
+  { name: "CBSE.page", offers: "Free year-wise and chapter-wise PYQs (advertised)", status: "Unverified",
+    caution: "Found through search only; PDFs not opened", url: "https://www.cbse.page/index.html" },
+  { name: "eSaral", offers: "Free NCERT solutions and study material (advertised)", status: "Unverified",
+    caution: "Page not fully opened; 2026-27 status unverified", url: null },
+  { name: "Chemistry “10 Pages” YouTube video", offers: "Quick Chemistry revision", status: "Partly verified",
+    caution: "Found through search; the YouTube page was not opened. Search for it by name and check the date and syllabus", url: null }
 ];
 
-const SITE_RULES = "No private site is completely authoritative. NCERT and official CBSE material override any third-party answer. Several sites advertise 2026-27 material while still showing older chapters. Third-party claims about exact question counts, years, ads and solution quality are partly unverified.";
+const SITE_RULES = "No private site is completely authoritative. The CBSE 2026-27 syllabus decides what is examinable; year labels on third-party PYQ pages show only what that page lists, not that a topic repeats every year. NCERT and official CBSE material override any third-party answer. Several sites advertise 2026-27 material while still showing older chapters. Third-party claims about exact question counts, years, ads and solution quality are partly unverified.";
 
-const MATERIAL_GAPS = "No complete 2026-27 mind-map or formula-sheet collection was verified for any subject; individual files were not opened. The safest approach is to make your own formula sheet and Chemistry reaction chart directly from the current NCERT books (use the My formula sheet box in each chapter). Individual PYQ papers and solutions were not all opened, so exact repetition years for each topic cannot be claimed.";
+const MATERIAL_GAPS = "Hindi: full official Hindi Physics PDFs are verified, but for Chemistry only the Solutions chapter and for Maths no direct Hindi PDF. No complete dedicated 2026-27 mind-map or formula-sheet collection was verified for all three subjects. The safest approach is to make your own formula sheet and Chemistry reaction chart directly from the current NCERT books (use the My formula sheet box in each chapter). Individual PYQ papers and solutions were not all opened, so exact repetition years for each topic cannot be claimed.";
 
 /* Frequent topics (research summary), keyed "Subject|Chapter". Chapters without an entry show nothing. */
 const PRIORITY = (function () {
   const src = {
     Physics: {
-      "Electric Charges & Fields": ["Gauss law and electric-field numericals"],
-      "Potential & Capacitance": ["Capacitors, dielectric and energy"],
-      "Current Electricity": ["Kirchhoff laws", "Drift velocity", "Internal resistance"],
+      "Electric Charges & Fields": ["Coulomb force and field", "Dipole and torque", "Flux and Gauss law (wire, sheet, shell)"],
+      "Potential & Capacitance": ["Potential and energy", "Equipotential surfaces", "Capacitor networks", "Dielectrics"],
+      "Current Electricity": ["Kirchhoff laws", "Drift velocity", "Internal resistance", "Galvanometer conversions"],
       "Moving Charges & Magnetism": ["Lorentz force", "Biot-Savart law", "Ampere law", "Galvanometer"],
       "EMI": ["Faraday law", "Lenz law", "Motional emf", "Generators"],
       "AC": ["AC circuits", "Resonance", "Transformers", "Power factor"],

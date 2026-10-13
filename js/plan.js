@@ -5,7 +5,7 @@
 
   const SUBJECTS = ['physics', 'chemistry', 'maths'];
   const NAMES = { physics: 'Physics', chemistry: 'Chemistry', maths: 'Maths' };
-  const PRIORITY_RANK = { 'High': 4, 'Med-High': 3, 'Medium': 2, 'Low-Med': 1 };
+  const PRIORITY_RANK = { 'Very High': 5, 'High': 4, 'Med-High': 3, 'Medium': 2, 'Low-Med': 1 };
   const PAPER_PHASE = 4;
   const DONE_KEY = 'forpcm_plan_done';
   const VIEWS = ['days', 'chapters', 'hours'];
