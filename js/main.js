@@ -61,8 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return `<li><a href="${href}"${current}>${label}${hi}</a></li>`;
   }).join('');
 
+  // FIX: was class="bar", which clashed with the progress-bar ".bar" rule in style.css
   document.getElementById('site-header').innerHTML = `
-    <div class="bar container">
+    <div class="site-bar container">
       <a class="logo" href="index.html" aria-label="FOR PCM, home">FOR PCM</a>
       <button class="icon-btn" id="theme-toggle" type="button"></button>
       <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button>

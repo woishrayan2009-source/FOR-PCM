@@ -59,7 +59,8 @@ section { margin-bottom: 40px; }
 
 /* ===== Header and footer ===== */
 .site-header { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--border); }
-.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 8px; padding-bottom: 8px; }
+/* FIX: renamed from ".bar" so it no longer clashes with the progress-bar ".bar" rule further down */
+.site-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 8px; padding-bottom: 8px; }
 .logo { margin-right: auto; font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; letter-spacing: .02em; }
 .icon-btn {
   min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid var(--border);
